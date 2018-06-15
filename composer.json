@@ -10,23 +10,9 @@
       "email": "pgmillon@nuxeo.com"
     }
   ],
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  ],
   "extra": {
     "branch-alias": {
       "dev-master": "2.0-dev"
-    },
-    "installer-paths": {
-      "integration/drupal8/web/core": ["type:drupal-core"],
-      "integration/drupal8/web/libraries/{$name}": ["type:drupal-library"],
-      "integration/drupal8/web/modules/contrib/{$name}": ["type:drupal-module"],
-      "integration/drupal8/web/profiles/contrib/{$name}": ["type:drupal-profile"],
-      "integration/drupal8/web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "integration/drupal8/drush/Commands/{$name}": ["type:drupal-drush"]
     }
   },
   "require": {
@@ -36,50 +22,17 @@
     "jms/serializer": "~1.12.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~6.5.0",
-    "symfony/http-foundation": "~3.4.0",
-    "sensiolabs/security-checker": "~4.1.0",
-
-    "drupal-composer/drupal-project": "8.x-dev",
-    "webflo/drupal-core-require-dev": "~8.5.3",
-    "symfony/web-server-bundle": "~3.4.0"
+    "phpunit/phpunit": "~7.2.0",
+    "symfony/http-foundation": "~4.1.0",
+    "sensiolabs/security-checker": "~4.1.0"
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "autoload": {
     "psr-4": { "Nuxeo\\": "src/Nuxeo" }
   },
   "autoload-dev" : {
-    "psr-0": {
-      "Drupal\\Tests\\": "integration/drupal8/web/core/tests",
-      "Drupal\\KernelTests\\": "integration/drupal8/web/core/tests",
-      "Drupal\\FunctionalTests\\": "integration/drupal8/web/core/tests",
-      "Drupal\\FunctionalJavascriptTests\\": "integration/drupal8/web/core/tests"
-    },
     "psr-4": {
-      "Drupal\\Nuxeo\\": "integration/drupal8/web/modules/nuxeo/src",
-      "Drupal\\Tests\\block\\": "integration/drupal8/web/core/modules/block/tests/src",
-      "Drupal\\Tests\\node\\": "integration/drupal8/web/core/modules/node/tests/src",
-      "Drupal\\Tests\\user\\": "integration/drupal8/web/core/modules/user/tests/src",
       "Nuxeo\\Client\\Tests\\": "tests/Nuxeo/Client/Tests",
       "Nuxeo\\Client\\FTests\\": "ftests/src/test/php/Nuxeo/Client/FTests"
-    },
-    "files": [
-      "integration/drupal8/load.environment.php"
-    ]
-  },
-  "scripts": {
-    "pre-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-    ],
-    "pre-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
-    ],
-    "post-install-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-    ],
-    "post-update-cmd": [
-      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles"
-    ]
+    }
   }
 }
