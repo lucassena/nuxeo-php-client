@@ -18,8 +18,8 @@
   "require": {
     "php": "~7.1",
     "guzzlehttp/guzzle": "6.3.*",
-    "monolog/monolog": "1.23.*",
-    "jms/serializer": "1.13.*"
+    "monolog/monolog": "1.26.*",
+    "jms/serializer": "1.14.*"
   },
   "require-dev": {
     "phpunit/phpunit": "7.4.*",
